@@ -279,10 +279,6 @@ ul {
     padding: 0;
   }
 
-  .list-timin [width="255px"] {
-    overflow: hidden;
-  }
-
   .list-timing__item {
     padding: 4px 16px;
     transition: box-shadow 0.3s ease;
