@@ -1,0 +1,309 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: "Open-Sans", sans-serif;
+}
+ul {
+  list-style: none;
+}
+
+.button {
+  color: #404040;
+  font-size: 14px;
+  line-height: 20px;
+  border: 0.5px solid #cba500;
+  background-color: #fed74b;
+  padding: 12px 40px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.cart-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
+.cart {
+  width: 340px;
+  border: 0.3px solid #828282;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.cart:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.cart__separator {
+  position: relative;
+}
+
+.cart__separator_padding {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 14px 12px 18px;
+}
+
+.cart__img {
+  position: relative;
+  width: 100%;
+  border-radius: 16px 16px 0 0;
+  width: 340px;
+  height: 220px;
+}
+
+.cart__label {
+  position: absolute;
+  top: 40px;
+  left: 0;
+
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  text-transform: uppercase;
+
+  padding: 8px 17px;
+
+  background-color: #fed74b;
+  color: #3e3e3e;
+}
+
+.cart__label_rounded {
+  font-size: 14px;
+  border-radius: 15px 0 12px;
+  top: 0;
+  left: 0;
+
+  /*  В данной ситуации нет смысла делать отдельный модификатор,
+        потому задам bg тут.
+    */
+  background-color: #7553ff;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.cart__header {
+  display: flex;
+  flex-direction: column;
+}
+
+.cart__title {
+  order: 2;
+  padding: 10px 0 20px;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 600;
+  color: #404040;
+}
+
+.cart__time {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  order: 1;
+  color: #9e9e9e;
+  line-height: 20px;
+  font-size: 12px;
+}
+
+.cart__time::before {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-image: url("../img/icons/clock.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 9px;
+  transform: translateY(-1px);
+}
+
+.service-list {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.service-list__item {
+  display: flex;
+  font-size: 14px;
+  line-height: 20px;
+  color: #4b4b4b;
+}
+
+.service-list__item:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+.service-list__item::before {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-image: url("../img/icons/check-mark.svg");
+  margin-right: 20px;
+}
+
+.service-list__item_timing {
+  display: flex;
+}
+
+.service-list__wrapper_width {
+  width: 286px;
+  overflow: scroll;
+}
+
+.list-timing {
+  display: flex;
+  align-items: center;
+  padding: 7px 0;
+}
+
+.list-timing__item {
+  padding: 3px 12px;
+  background-color: #d9e8ff;
+  border-radius: 11px;
+  color: #343434;
+  font-size: 14px;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+.list-timin__item:hover {
+  background: #6ba6ff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 11px;
+}
+
+.list-timing__item:not(:last-child) {
+  margin-right: 6px;
+}
+
+.cart__price {
+  display: flex;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 22px;
+}
+
+.cart__price_add {
+  font-size: 10px;
+  line-height: 20px;
+}
+
+.cart__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 5px 0;
+}
+
+@media (min-width: 1440px) {
+  .button_orange {
+    margin-left: 10px;
+  }
+
+  .cart {
+    display: flex;
+    width: 1070px;
+    height: 370px;
+  }
+
+  .cart__label {
+    padding: 12px 35px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .cart__label_rounded {
+    top: 40px;
+  }
+
+  .cart__img {
+    width: 472px;
+    height: 369px;
+    border-radius: 16px 0 0 16px;
+  }
+
+  .cart__title {
+    order: 1;
+    padding: 0 0 10px;
+    font-size: 26px;
+    line-height: 34px;
+    font-weight: 400;
+  }
+
+  .cart__separator_padding {
+    padding: 16px 20px;
+  }
+
+  .service-list__item {
+    font-size: 18px;
+  }
+
+  .service-list__item:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  .service-list__item_timing {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+
+  .service-list__wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .list-timing-title {
+    display: block;
+    margin-right: 6px;
+    white-space: nowrap;
+  }
+
+  .cart__time {
+    order: 2;
+    padding-bottom: 10px;
+    font-size: 14px;
+  }
+
+  .list-timin {
+    padding: 0;
+  }
+
+  .list-timin [width="255px"] {
+    overflow: hidden;
+  }
+
+  .list-timing__item {
+    padding: 4px 16px;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .list-timing__item:hover {
+    -moz-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  .cart__price {
+    line-height: 20px;
+  }
+
+  .cart__price_add {
+    font-size: 14px;
+  }
+
+  .cart__footer {
+    padding: 21px 5px 0;
+    justify-content: start;
+  }
+}

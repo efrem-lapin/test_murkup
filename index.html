@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Markup</title>
+  </head>
+  <body>
+    <ul class="cart-list">
+      <li class="cart">
+        <div class="cart__separator">
+          <img
+            class="cart__img"
+            src="img/cart_img.jpg"
+            alt="Достопримечательность"
+          />
+          <span class="cart__label">Новинка</span>
+        </div>
+        <div class="cart__separator cart__separator_padding">
+          <header class="cart__header">
+            <h2 class="cart__title">
+              АКЦИЯ - Обзорная экскурсия по рекам и каналам с остановками Hop on
+              Hop Off 2019
+            </h2>
+            <div class="cart__time">2 часа</div>
+          </header>
+          <ul class="service-list">
+            <li class="service-list__item">Билет на целый день</li>
+            <li class="service-list__item">Неограниченное число катаний</li>
+            <li class="service-list__item">
+              6 остановок у главных достопримечательностей
+            </li>
+            <li class="service-list__item service-list__item_timing">
+              <div class="">
+                Ближайший рейс сегодня
+                <ul class="list-timing">
+                  <div class="list-timing__item">12:00</div>
+                  <div class="list-timing__item">12:00</div>
+                  <div class="list-timing__item">12:00</div>
+                  <div class="list-timing__item">12:00</div>
+                </ul>
+              </div>
+            </li>
+          </ul>
+          <div class="cart__footer">
+            <div class="cart__separator">
+              <div class="cart__price">990 &#x20bd;</div>
+              <div class="cart__price cart__price_add">1200 р на причале</div>
+            </div>
+            <div class="cart__separator">
+              <button class="button button_orange button_rounded">
+                Подробнее
+              </button>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li class="cart">
+        <div class="cart__separator">
+          <img
+            class="cart__img"
+            src="img/cart_img2.jpg"
+            alt="Достопримечательность"
+          />
+          <span class="cart__label cart__label_rounded">Новинка</span>
+        </div>
+        <div class="cart__separator cart__separator_padding">
+          <header class="cart__header">
+            <h2 class="cart__title">
+              АКЦИЯ - Обзорная экскурсия по рекам и каналам с остановками Hop on
+              Hop Off 2019
+            </h2>
+            <div class="cart__time">2 часа</div>
+          </header>
+          <ul class="service-list">
+            <li class="service-list__item">Билет на целый день</li>
+            <li class="service-list__item">Неограниченное число катаний</li>
+            <li class="service-list__item">
+              6 остановок у главных достопримечательностей
+            </li>
+            <li class="service-list__item service-list__item_timing">
+              <div class="service-list__wrapper">
+                <div class="list-timing-title">Ближайший рейс сегодня</div>
+                <div class="service-list__wrapper service-list__wrapper_width">
+                  <ul class="list-timing">
+                    <div class="list-timing__item">12:00</div>
+                    <div class="list-timing__item">12:00</div>
+                    <div class="list-timing__item">12:00</div>
+                    <div class="list-timing__item">12:00</div>
+                    <div class="list-timing__item">12:00</div>
+                    <div class="list-timing__item">12:00</div>
+                    <div class="list-timing__item">12:00</div>
+                    <div class="list-timing__item">12:00</div>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <div class="cart__footer">
+            <div class="cart__separator">
+              <div class="cart__price">990 &#x20bd;</div>
+              <!-- Для примера ко второму пункту задания убран блок под ценой: -->
+              <!-- <div class="cart__price cart__price_add">1200 р на причале</div> -->
+            </div>
+            <div class="cart__separator">
+              <button class="button button_orange button_rounded">
+                Подробнее
+              </button>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <script>
+      window.onload = () => {
+        const timeBoxes = document.querySelectorAll(".list-timing");
+        const btnFlag = true;
+
+        timeBoxes.forEach((box) => {
+          if (box.children.length > 4) {
+            [...box.children].forEach((item, indx) => {
+              if (indx > 2) item.style.display = "none";
+            });
+
+            const btn = document.createElement("div");
+            btn.classList.add("list-timing__item");
+            btn.innerText = "ещё...";
+
+            btn.addEventListener("click", () => {
+              [...box.children].forEach((item) => {
+                item.style.display = "block";
+              });
+
+              btn.remove();
+            });
+
+            box.appendChild(btn);
+          }
+        });
+      };
+    </script>
+  </body>
+</html>
